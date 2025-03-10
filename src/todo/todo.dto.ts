@@ -35,7 +35,7 @@ export class UpdateTodoInput {
 
 @InputType()
 export class SubtaskInput {
-  @Field({nullable: true})
+  @Field({ nullable: true })
   _id?: string;
 
   @Field()

@@ -35,7 +35,7 @@ export class Todo {
 export class Subtask {
   @Field()
   _id: string;
-  
+
   @Field({ nullable: true })
   title?: string;
 
