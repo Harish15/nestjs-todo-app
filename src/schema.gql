@@ -1,0 +1,71 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  _id: String!
+  title: String!
+  completed: Boolean!
+  priority: String
+  subtasks: [Subtask!]
+  createdAt: DateTime
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Subtask {
+  _id: String!
+  title: String
+  completed: Boolean!
+}
+
+type Query {
+  getTodos(filters: FilterTodoInput, pagination: PaginationInput, sort: SortInput): [Todo!]!
+  getTodoById(id: String!): Todo
+}
+
+input FilterTodoInput {
+  title: String
+  completed: Boolean
+  priority: String
+}
+
+input PaginationInput {
+  page: Float = 1
+  limit: Float = 10
+}
+
+input SortInput {
+  field: String
+  order: String = "asc"
+}
+
+type Mutation {
+  createTodo(input: CreateTodoInput!): Todo!
+  updateTodo(input: UpdateTodoInput!): Todo!
+  deleteTodo(id: String!): String!
+}
+
+input CreateTodoInput {
+  title: String!
+  priority: String
+  completed: Boolean
+  subtasks: [SubtaskInput!]
+}
+
+input SubtaskInput {
+  _id: String
+  title: String!
+  completed: Boolean = false
+}
+
+input UpdateTodoInput {
+  id: String!
+  title: String
+  completed: Boolean
+  priority: String
+  subtasks: [SubtaskInput!]
+}
