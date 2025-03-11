@@ -138,7 +138,7 @@ import { winstonLogger } from './logger/winston.logger';
       introspection: true,
     }),
     WinstonModule.forRoot({
-      transports: winstonLogger.transports, 
+      transports: winstonLogger.transports,
     }),
     // ✅ Import Todo Module
     TodoModule,
@@ -149,12 +149,7 @@ import { winstonLogger } from './logger/winston.logger';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(
-        cookieParser(),
-        CsrfMiddleware,
-        ProfilingMiddleware,
-        MonitoringMiddleware,
-      )
+      .apply(cookieParser(), CsrfMiddleware, ProfilingMiddleware, MonitoringMiddleware)
       .forRoutes('*'); // Apply to all routes
   }
 }

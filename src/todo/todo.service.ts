@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, LoggerService,Inject } from '@nestjs/common';
+import { Injectable, NotFoundException, LoggerService, Inject } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Model } from 'mongoose';
@@ -66,7 +66,10 @@ export class TodoService {
     const todoData = TodoFactory.create(createTodoInput);
     const newTodo = await new this.todoModel(todoData).save();
 
-    this.logger.log({ level: 'info', message: `Todo created successfully with ID: ${newTodo._id}` });
+    this.logger.log({
+      level: 'info',
+      message: `Todo created successfully with ID: ${newTodo._id}`,
+    });
     return newTodo;
   }
 
@@ -94,7 +97,10 @@ export class TodoService {
     }
 
     const updatedTodo = await todo.save();
-    this.logger.log({ level: 'info', message: `Todo updated successfully with ID: ${updatedTodo._id}` });
+    this.logger.log({
+      level: 'info',
+      message: `Todo updated successfully with ID: ${updatedTodo._id}`,
+    });
     return updatedTodo;
   }
 

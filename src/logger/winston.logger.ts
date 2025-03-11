@@ -5,9 +5,11 @@ export const winstonLogger = winston.createLogger({
   level: 'info', // Default log level
   format: winston.format.combine(
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-    winston.format.printf(({ timestamp, level, message }) => {
-      return `[${timestamp}] [${level.toUpperCase()}]: ${message}`;
-    }),
+    winston.format.printf(
+      ({ timestamp, level, message }: { timestamp: string; level: string; message: string }) => {
+        return `[${timestamp}] [${level.toUpperCase()}]: ${message}`;
+      },
+    ),
   ),
   transports: [
     new winston.transports.Console({

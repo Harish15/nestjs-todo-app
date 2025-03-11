@@ -7,8 +7,7 @@ export class TodoFactory {
       title: input.title,
       priority: input.priority ?? 'MEDIUM', // Default to 'MEDIUM' if undefined
       completed: input.completed ?? false, // Default to false
-      subtasks:
-        input.subtasks?.map((subtask) => this.createSubtask(subtask)) ?? [],
+      subtasks: input.subtasks?.map((subtask) => this.createSubtask(subtask)) ?? [],
     };
   }
 
@@ -22,9 +21,7 @@ export class TodoFactory {
       // ✅ Update subtask if `_id` matches, otherwise keep the existing one
       subtasks: input.subtasks
         ? (existingTodo?.subtasks?.map((subtask) => {
-            const updatedSubtask = input.subtasks?.find(
-              (s) => s._id === subtask._id,
-            );
+            const updatedSubtask = input.subtasks?.find((s) => s._id === subtask._id);
             return updatedSubtask ? { ...subtask, ...updatedSubtask } : subtask;
           }) ??
           (existingTodo?.subtasks || []))

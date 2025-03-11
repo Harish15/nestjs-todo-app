@@ -5,9 +5,7 @@ import { TodoService } from './todo.service';
 import { TodoResolver } from './todo.resolver';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: Todo.name, schema: TodoSchema }]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: Todo.name, schema: TodoSchema }])],
   providers: [TodoService, TodoResolver],
 })
 export class TodoModule {}

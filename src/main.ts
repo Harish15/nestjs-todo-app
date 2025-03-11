@@ -11,4 +11,7 @@ async function bootstrap() {
   console.log(`🚀 Server running on http://localhost:${port}`);
 }
 
-bootstrap();
+bootstrap().catch((error) => {
+  console.error('Error starting the application:', error);
+  process.exit(1); // Exit process if the app fails to start
+});

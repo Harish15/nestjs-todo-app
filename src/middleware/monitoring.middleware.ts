@@ -22,24 +22,31 @@ export class MonitoringMiddleware implements NestMiddleware {
     });
   }
 
-  use(req: Request, res: Response, next: NextFunction) {
+  use(req: Request, res: Response, next: NextFunction): void {
     const start = Date.now();
 
     res.on('finish', () => {
       const duration = (Date.now() - start) / 1000; // Convert to seconds
-      this.httpRequestCount.inc({
-        method: req.method,
-        route: req.originalUrl,
-        status: res.statusCode.toString(),
-      });
-      this.httpRequestDuration.observe(
-        {
+      try {
+        this.httpRequestCount.inc({
           method: req.method,
           route: req.originalUrl,
           status: res.statusCode.toString(),
-        },
-        duration,
-      );
+        });
+
+        this.httpRequestDuration.observe(
+          {
+            method: req.method,
+            route: req.originalUrl,
+            status: res.statusCode.toString(),
+          },
+          duration,
+        );
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          console.error(`[MonitoringMiddleware] Error recording metrics: ${error.message}`);
+        }
+      }
     });
 
     next();
