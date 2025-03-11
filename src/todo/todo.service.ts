@@ -64,7 +64,8 @@ export class TodoService {
     this.logger.log({ level: 'info', message: 'Creating a new todo...', createTodoInput });
 
     const todoData = TodoFactory.create(createTodoInput);
-    const newTodo = await new this.todoModel(todoData).save();
+    // const newTodo = await new this.todoModel(todoData).save();
+    const newTodo = await this.todoModel.create(todoData); // ✅ Correct
 
     this.logger.log({
       level: 'info',
