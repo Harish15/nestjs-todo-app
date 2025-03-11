@@ -32,9 +32,29 @@ export default tseslint.config(
   },
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      // 🔹 Best Practices
+      'no-console': 'warn', // Warn on console.log (use logger instead)
+      'no-debugger': 'error', // Disallow debugger statements
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }], // Ignore unused function arguments with `_`
+
+      // 🔹 TypeScript-Specific Rules
+      '@typescript-eslint/no-explicit-any': 'error', // Disallow `any`
+      '@typescript-eslint/no-floating-promises': 'error', // Prevent unhandled promises
+      '@typescript-eslint/no-unsafe-argument': 'error', // Ensure safe argument usage
+      '@typescript-eslint/explicit-function-return-type': 'warn', // Enforce return types for functions
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }], // Ignore unused params with `_`
+
+      // 🔹 Code Formatting (Handled by Prettier)
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true, // Enforce single quotes
+          trailingComma: 'all', // Enforce trailing commas where valid
+          printWidth: 100, // Wrap lines at 100 characters
+          tabWidth: 2, // Use 2 spaces for indentation
+          semi: true, // Require semicolons
+        },
+      ],
     },
   },
 );

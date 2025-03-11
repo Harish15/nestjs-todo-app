@@ -11,6 +11,8 @@ import { CsrfController } from './csrf.controller';
 import { ProfilingMiddleware } from './middleware/profiling.middleware'; // Import Profiling Middleware
 import { MonitoringModule } from './monitoring/monitoring.module';
 import { MonitoringMiddleware } from './middleware/monitoring.middleware';
+import { WinstonModule } from 'nest-winston';
+import { winstonLogger } from './logger/winston.logger';
 
 @Module({
   imports: [
@@ -135,7 +137,9 @@ import { MonitoringMiddleware } from './middleware/monitoring.middleware';
       },
       introspection: true,
     }),
-
+    WinstonModule.forRoot({
+      transports: winstonLogger.transports, 
+    }),
     // ✅ Import Todo Module
     TodoModule,
     MonitoringModule,
