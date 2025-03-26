@@ -7,25 +7,9 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<p align="center">A simple todo app built using NestJS, GraphQL and Mongodb.</p>
 
 ## Project setup
 
@@ -61,9 +45,60 @@ $ npm run test:cov
 
 ## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+This todo app is confiugured with Github actions with Docker.
+Integrating Docker with GitHub Actions automates the process of building, testing, and deploying your Docker images.
+Here’s why it’s useful:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+🔹 1. Automate Docker Image Builds 🏗️
+Every time you push changes to your repository, GitHub Actions can automatically build your Docker image.
+Ensures that your image is always up to date with the latest code changes.
+✅ Example:
+
+A new feature is merged → GitHub Actions builds a new Docker image.
+🔹 2. Push Docker Images to Docker Hub or AWS/GCP/Azure ☁️
+Automatically push your images to Docker Hub or cloud registries (AWS ECR, GCP GCR, Azure ACR).
+Ensures that your latest image is always available for deployment.
+✅ Example:
+
+You push code to main → GitHub Actions builds and pushes the image to Docker Hub.
+🔹 3. Run Tests in a Dockerized Environment 🧪
+Run unit tests, integration tests, and security scans inside a container before deployment.
+Helps prevent "works on my machine" issues.
+✅ Example:
+
+Run tests inside a clean Docker container to ensure consistency across environments.
+🔹 4. Deploy to Kubernetes, AWS, or Other Services 🚀
+Automate CI/CD pipelines to deploy Docker containers to Kubernetes, AWS ECS, GCP Cloud Run, etc.
+Supports zero-downtime deployments and rolling updates.
+✅ Example:
+
+After a successful image build, GitHub Actions deploys it to a Kubernetes cluster.
+🔹 5. Improve Security 🔐
+Automate security scans on Docker images using tools like Trivy or Snyk.
+Detects vulnerabilities before deployment.
+✅ Example:
+
+Scan the Docker image for security issues before pushing it to production.
+🔹 6. Reduce Manual Work & Human Errors 🤖
+No need to manually run docker build or docker push.
+Everything is automated with a workflow.
+✅ Example:
+
+Push code → GitHub Actions does everything (build, test, push, deploy) automatically.
+🔹 7. Consistent Environment for All Developers 🏗️
+Ensures that everyone is working with the same dependencies and environment.
+Avoids problems like "it works on my machine, but not in production."
+✅ Example:
+
+A developer uses Windows, but the production server is Linux → Docker ensures consistency.
+🚀 Summary: Why Use Docker with GitHub Actions?
+Feature	Benefit
+✅ Automates builds ->	No need to manually run docker build
+✅ Pushes to Docker Hub ->	Ensures the latest image is always available
+✅ Runs tests in Docker	-> Prevents environment-specific bugs
+✅ Deploys automatically ->	Integrates with Kubernetes, AWS, GCP
+✅ Improves security	-> Scans images for vulnerabilities
+✅ Reduces manual errors ->	CI/CD ensures reliable deployments
 
 ```bash
 $ npm install -g mau
@@ -98,4 +133,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
->>>>>>> 1c86421 (Initial commit)
+
+> > > > > > > 1c86421 (Initial commit)
