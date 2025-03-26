@@ -16,12 +16,12 @@ import { winstonLogger } from './logger/winston.logger';
 
 @Module({
   imports: [
-    // ✅ Load Environment Variables
+    //Load Environment Variables
     ConfigModule.forRoot({
       isGlobal: true, // Makes config available globally
     }),
 
-    // ✅ Use MongoDB URL from .env
+    //Use MongoDB URL from .env
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -30,7 +30,7 @@ import { winstonLogger } from './logger/winston.logger';
       }),
     }),
 
-    // ✅ GraphQL Configuration with Custom Playground Tabs
+    //GraphQL Configuration with Custom Playground Tabs
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
@@ -140,7 +140,7 @@ import { winstonLogger } from './logger/winston.logger';
     WinstonModule.forRoot({
       transports: winstonLogger.transports,
     }),
-    // ✅ Import Todo Module
+    //Import Todo Module
     TodoModule,
     MonitoringModule,
   ],

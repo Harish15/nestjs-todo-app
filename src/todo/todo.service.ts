@@ -10,7 +10,7 @@ import {
   PaginationInput,
   SortInput,
 } from './todo.dto';
-import { TodoFactory } from './todo.factory'; // ✅ Using Factory
+import { TodoFactory } from './todo.factory'; //Using Factory
 
 @Injectable()
 export class TodoService {
@@ -65,7 +65,7 @@ export class TodoService {
 
     const todoData = TodoFactory.create(createTodoInput);
     // const newTodo = await new this.todoModel(todoData).save();
-    const newTodo = await this.todoModel.create(todoData); // ✅ Correct
+    const newTodo = await this.todoModel.create(todoData); //Correct
 
     this.logger.log({
       level: 'info',

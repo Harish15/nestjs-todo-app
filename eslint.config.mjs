@@ -1,4 +1,4 @@
-// @ts-check
+//@ts-check
 import eslint from '@eslint/js';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
@@ -27,13 +27,13 @@ export default tseslint.config(
   },
   {
     rules: {
-      // ✅ Best Practices
+      //Best Practices
       'no-console': ['warn', { allow: ['warn', 'error'] }], // Allow console.warn & console.error
       'no-debugger': 'warn', 
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
     
-      // ✅ TypeScript-Specific Rules (Changed Errors to Warnings)
+      //TypeScript-Specific Rules (Changed Errors to Warnings)
       '@typescript-eslint/no-explicit-any': 'warn', // Warn instead of error
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
@@ -42,10 +42,10 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-return': 'warn',
       '@typescript-eslint/no-unsafe-assignment': 'warn',
     
-      // ✅ Function Return Types
+      //Function Return Types
       '@typescript-eslint/explicit-function-return-type': 'warn',
     
-      // ✅ Prettier Formatting
+      //rettier Formatting
       'prettier/prettier': [
         'warn', // Change from 'error' to 'warn'
         {

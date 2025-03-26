@@ -15,7 +15,7 @@ import { Todo } from './todo.schema';
 export class TodoResolver {
   constructor(
     private readonly todoService: TodoService,
-    @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: LoggerService, // ✅ Inject Winston Logger
+    @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: LoggerService, //Inject Winston Logger
   ) {}
 
   @Query(() => [Todo])
