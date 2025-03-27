@@ -19,11 +19,12 @@ Below points are covered while developing this app.
 4. Sorting, Filtering, and Pagination using MongoDB aggregation
 5. Interceptor for consistent API responses
 6. Linting rules for better code quality
-7. Winston for logging
-8. JEST test cases.
-9. Docker support added.
-10. Github actions
-11. Connected GitHub action with docker, so anytime new commit is pushed to repository the docker build will be auto created and pushed to docker hub
+7. Prometheus for monitoring.
+8. Winston for logging
+9. JEST test cases.
+10. Docker support added.
+11. Github actions
+12. Connected GitHub action with docker, so anytime new commit is pushed to repository the docker build will be auto created and pushed to docker hub
 
 
 ## Project setup
