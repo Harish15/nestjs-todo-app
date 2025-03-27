@@ -20,9 +20,10 @@ Below points are covered while developing this app.
 5. Interceptor for consistent API responses
 6. Linting rules for better code quality
 7. Winston for logging
-8. Docker support added.
-9. Github actions
-10. Connected GitHub action with docker, so anytime new commit is pushed to repository the docker build will be auto created and pushed to docker hub
+8. JEST test cases.
+9. Docker support added.
+10. Github actions
+11. Connected GitHub action with docker, so anytime new commit is pushed to repository the docker build will be auto created and pushed to docker hub
 
 
 ## Project setup
