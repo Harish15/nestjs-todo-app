@@ -18,14 +18,15 @@ Below points are covered while developing this app.
 3. GraphQL Playground customization (with auto-generated query/mutation tabs)
 4. Sorting, Filtering, and Pagination using MongoDB aggregation
 5. Interceptor for consistent API responses
-6. X-CSRF-Token
-7. Linting rules for better code quality
-8. Prometheus for monitoring.
-9. Winston for logging
-10. JEST test cases.
-11. Docker support added.
-12. Github actions
-13. Connected GitHub action with docker, so anytime new commit is pushed to repository the docker build will be auto created and pushed to docker hub
+6. Profiling
+7. X-CSRF-Token
+8. Linting rules for better code quality
+9. Prometheus for monitoring.
+10. Winston for logging
+11. JEST test cases.
+12. Docker support added.
+13. Github actions
+14. Connected GitHub action with docker, so anytime new commit is pushed to repository the docker build will be auto created and pushed to docker hub
 
 
 ## Project setup
