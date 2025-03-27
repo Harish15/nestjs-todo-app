@@ -19,8 +19,8 @@ COPY . .
 # Build the NestJS project
 RUN npm run build
 
-# Expose the application port (change if needed)
-EXPOSE 3000
+# Expose the application port
+EXPOSE 4000
 
 # Start the application
 CMD ["npm", "run", "start:dev"]

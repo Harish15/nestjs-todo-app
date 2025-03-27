@@ -84,8 +84,8 @@ docker run -p 4000:3000 --env-file .env nestjs-todo-app
 # to start everything
 docker-compose up -d
 
-
-docker-compose down -v  # Stop and remove all containers + volumes
+# Stop and remove all containers + volumes
+docker-compose down -v  
 docker-compose up --build
 
 docker pull harishshinde/nestjs-todo-app:latest
