@@ -9,13 +9,13 @@
 
 ## Description
 
-<p align="center">A simple todo app built using NestJS, GraphQL and Mongodb.</p>
+<p align="center">A todo app built using NestJS, GraphQL and Mongodb.</p>
 
 Below points are covered while developing this app.
 
 1. CRUD API using NestJS + GraphQL
 2. MongoDB integration (via Mongoose)
-3. GraphQL Playground customization (with auto-generated query/mutation tabs)
+3. GraphQL Playground customization
 4. Sorting, Filtering, and Pagination using MongoDB aggregation
 5. Interceptor for consistent API responses
 6. Profiling
